@@ -48,11 +48,6 @@ func CheckTCPConnection(address string, timeout int) bool {
 	return err == nil
 }
 
-func CheckUDPConnection(address string, timeout int) bool {
-	_, err := net.DialTimeout("udp", address, time.Second*time.Duration(timeout))
-	return err == nil
-}
-
 func main() {
 	ip := flag.String("i", "", "IP Address")
 	flag.Parse()
